@@ -1,0 +1,15 @@
+<h1>Add a Product</h1>
+
+<% if @product.errors.any?%>
+    <div id="error_explanation">
+      <p><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</p>
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<%= render'product_form', product: @product %>
